@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Calculator */
+.calculator {
+    width: 360px;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 25px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Display */
+.display {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    background: #101010;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+#history {
+    width: 100%;
+    min-height: 25px;
+    margin-bottom: 8px;
+
+    color: #888;
+    font-size: 16px;
+    text-align: right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#display {
+    width: 100%;
+
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Buttons container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* All buttons */
+button {
+    height: 65px;
+    border: none;
+    border-radius: 16px;
+
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.1s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Press effect */
+button:active {
+    transform: scale(0.94);
+}
+
+/* Dark number buttons */
+button.dark {
+    background: #2d2d2d;
+}
+
+button.dark:hover {
+    background: #3a3a3a;
+}
+
+/* Gray buttons - AC, backspace, percentage */
+button.gray {
+    background: #a5a5a5;
+    color: #111;
+}
+
+button.gray:hover {
+    background: #c0c0c0;
+}
+
+/* Orange operator buttons */
+button.orange {
+    background: #ff9500;
+    color: white;
+}
+
+button.orange:hover {
+    background: #ffad32;
+}
+
+/* Keyboard focus */
+button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 420px) {
+    .calculator {
+        width: 92%;
+        padding: 15px;
+        border-radius: 22px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+    button {
+        height: 60px;
+        font-size: 20px;
+    }
+
+    #display {
+        font-size: 36px;
+    }
+}
